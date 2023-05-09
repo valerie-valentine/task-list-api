@@ -19,7 +19,7 @@ class Task(db.Model):
     def from_dict(cls, task_data):
         new_task = cls(title=task_data["title"],
                        description=task_data["description"],
-                       completed_at=task_data["completed_at"])
+                       completed_at=task_data.get("completed_at"))
 
         return new_task
                 
