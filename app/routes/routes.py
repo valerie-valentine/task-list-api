@@ -2,6 +2,7 @@ from app import db
 from app.models.task import Task
 from flask import Blueprint, jsonify, make_response, abort, request
 from app.helpers import validate_model
+from datetime import datetime
 
 
 tasks_bp = Blueprint("tasks", __name__, url_prefix="/tasks")
@@ -52,6 +53,27 @@ def update_task(task_id):
     
     except KeyError:
         abort(make_response({"details": "Invalid data"}, 400))
+
+@tasks_bp.route("/<task_id>/mark_complete", methods=["PATCH"])
+def mark_task_complete(task_id):
+    task = validate_model(Task, task_id)
+    if not task.completed_at:
+        task.completed_at = datetime.now().isoformat()
+
+    db.session.commit()
+
+    return make_response({"task": task.to_dict()}, 200)
+
+
+@tasks_bp.route("/<task_id>/mark_incomplete", methods=["PATCH"])
+def mark_task_incomplete(task_id):
+    task = validate_model(Task, task_id)
+    if task.completed_at:
+        task.completed_at = None
+
+    db.session.commit()
+
+    return make_response({"task": task.to_dict()}, 200)
 
 @tasks_bp.route("/<task_id>", methods=["DELETE"])
 def delete_book(task_id):
