@@ -83,7 +83,7 @@ def add_tasks_to_goal(goal_id):
         abort(make_response({"details": "Invalid data"}, 400))
 
 @goals_bp.route("/<goal_id>/tasks", methods=["GET"])
-def get_tasks_from_goal(goal_id):
+def get_one_goals_task(goal_id):
     goal = validate_model(Goal, goal_id)
     
     task_response = []
