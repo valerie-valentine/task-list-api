@@ -78,7 +78,7 @@ def mark_task_incomplete(task_id):
     return make_response({"task": task.to_dict()}, 200)
 
 @tasks_bp.route("/<task_id>", methods=["DELETE"])
-def delete_book(task_id):
+def delete_task(task_id):
     task = validate_model(Task, task_id)
 
     db.session.delete(task)
