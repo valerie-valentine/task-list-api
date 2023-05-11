@@ -1,8 +1,9 @@
 from app import db
 from app.models.task import Task
 from flask import Blueprint, jsonify, make_response, abort, request
-from app.helpers import validate_model
+from app.helper_functions import validate_model, create_slack_message
 from datetime import datetime
+
 
 
 tasks_bp = Blueprint("tasks", __name__, url_prefix="/tasks")
@@ -61,6 +62,7 @@ def mark_task_complete(task_id):
         task.completed_at = datetime.now().isoformat()
 
     db.session.commit()
+    create_slack_message(task)
 
     return make_response({"task": task.to_dict()}, 200)
 
