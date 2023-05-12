@@ -28,6 +28,10 @@ def get_all_tasks():
         tasks = Task.query.order_by(Task.title.asc())
     elif title_query == "desc":
         tasks = Task.query.order_by(Task.title.desc())
+    elif title_query == "id_asc":
+        tasks = Task.query.order_by(Task.task_id.asc())
+    elif title_query == "id_desc":
+        tasks = Task.query.order_by(Task.task_id.desc())
     else:
         tasks = Task.query.all()
     
