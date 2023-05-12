@@ -17,13 +17,14 @@ def validate_model(cls, model_id):
 
 def create_slack_message(task):
     api_url = "https://slack.com/api/chat.postMessage"
-
+    TOKEN = os.environ.get("SLACK_API_KEY") 
+                   
     payload = {
     "channel": "#api-test-channel",
     "text": f"Someone just completed the task {task.title}."
     }
     headers = {
-    'Authorization': os.environ.get("SLACK_API_KEY")
+    'Authorization': f"Bearer {TOKEN}"
     }
 
     response = requests.post(api_url, headers=headers, data=payload)
