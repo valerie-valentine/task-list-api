@@ -2,13 +2,12 @@
 
 ## Skills Assessed
 
-- Following directions and reading comprehension
 - Reading, writing, and using tests
 - Demonstrating understanding of the client-server model, request-response cycle and conventional RESTful routes
 - Driving development with independent research, experimentation, and collaboration
 - Reading and using existing external web APIs
 - Using Postman as part of the development workflow
-- Using git as part of the development workflow
+
 
 Working with the Flask package:
 
@@ -35,11 +34,6 @@ We also want to do some interesting features with our tasks. We want to be able 
 
 ... and more!
 
-## How to Complete and Submit
-
-Go through the waves one-by-one and build the features of this API.
-
-At submission time, no matter where you are, submit the project via Learn.
 
 ## Project Directions
 
