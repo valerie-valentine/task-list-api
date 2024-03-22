@@ -34,8 +34,6 @@ We also want to do some interesting features with our tasks. We want to be able 
 
 ... and more!
 
-# Installation
-
 # Requirements
 
 - Python 
