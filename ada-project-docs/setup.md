@@ -13,6 +13,12 @@ The goal for setup is to cover all of the set up needed at the beginning of this
 
 # Requirements
 
+- Python 
+- Flask
+- pip
+- SQLAlchemy
+
+
 ## Fork and Clone
 
 1. Fork this project repo to your own personal account
