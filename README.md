@@ -1,5 +1,24 @@
 # Task List API
 
+## Skills Assessed
+
+- Reading, writing, and using tests
+- Demonstrating understanding of the client-server model, request-response cycle and conventional RESTful routes
+- Driving development with independent research, experimentation, and collaboration
+- Reading and using existing external web APIs
+- Using Postman as part of the development workflow
+
+
+Working with the Flask package:
+
+- Creating models
+- Creating conventional RESTful CRUD routes for a model
+- Reading query parameters to create custom behavior
+- Create unconventional routes for custom behavior
+- Apply knowledge about making requests in Python, to call an API inside of an API
+- Apply knowledge about environment variables
+- Creating a one-to-many relationship between two models
+
 ## Goals
 
 There's so much we want to do in the world! When we organize our goals into smaller, bite-sized tasks, we'll be able to track them more easily, and complete them!
