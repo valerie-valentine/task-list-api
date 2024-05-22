@@ -94,3 +94,23 @@ def delete_task(task_id):
     db.session.commit()
 
     return make_response({"details": task.task_id})
+
+
+# /get all incomplete tasks
+
+
+@tasks_bp.route("/incomplete", methods=["GET"])
+def get_incomplete_tasks():
+    tasks = Task.query.filter(Task.completed_at == None).all()
+    tasks_response = [task.to_dict() for task in tasks]
+    return jsonify(tasks_response)
+
+
+# /get all complete tasks
+
+
+@tasks_bp.route("/complete", methods=["GET"])
+def get_complete_tasks():
+    tasks = Task.query.filter(Task.completed_at != None).all()
+    tasks_response = [task.to_dict() for task in tasks]
+    return jsonify(tasks_response)
